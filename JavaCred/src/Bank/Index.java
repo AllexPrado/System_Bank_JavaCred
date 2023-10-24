@@ -1,4 +1,4 @@
-package Banck;
+package Bank;
 
 
 

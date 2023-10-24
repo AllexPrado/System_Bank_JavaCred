@@ -1,4 +1,4 @@
-USE JAVACARD;
+USE JAVACRED;
 GO
 
 CREATE TABLE tipo_bancaria (

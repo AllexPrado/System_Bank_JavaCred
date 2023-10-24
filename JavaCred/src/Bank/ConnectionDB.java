@@ -1,4 +1,4 @@
-package Banck;
+package Bank;
 
 //Classes necessárias para uso de Banco de dados //
 
@@ -44,7 +44,7 @@ Class.forName(driverName);
 
 			String serverName = "localhost";    //caminho do servidor do BD
 			
-			String databaseName = "JAVACARD";
+			String databaseName = "JAVACRED";
 			
 			String url = "jdbc:sqlserver://" + serverName + ";databaseName=" + databaseName;
 			

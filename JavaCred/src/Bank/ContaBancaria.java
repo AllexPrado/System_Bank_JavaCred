@@ -1,4 +1,4 @@
-package Banck;
+package Bank;
 
 
 
@@ -148,7 +148,7 @@ public class ContaBancaria {
         
     //consultando contas bancarias
         
-    void listarContas() {
+   public void listarContas() {
         try (Connection connection = ConnectionDB.getConexaoSQLServer()) {
             String sql = "SELECT tipo_conta, nome_conta, status_conta, numero_conta FROM conta_bancaria";
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -175,7 +175,7 @@ public class ContaBancaria {
 
     //operar conta, saldo, extrato, pagamento, deposito, transferencia e saque
     
-    void operarConta() {
+   public void operarConta() {
         int numeroDigitado = 0;
 
         try (Scanner digiteConta = new Scanner(System.in)) {
@@ -260,7 +260,7 @@ public class ContaBancaria {
     
     //metodo para consulta de saldo, numero da conta e nome
 
-    void consultaSaldo(int numeroDigitado) {
+   public void consultaSaldo(int numeroDigitado) {
         try (Connection connection = ConnectionDB.getConexaoSQLServer()) {
             String sql = "SELECT SALDO_CONTA, NOME_CONTA, NUMERO_CONTA FROM conta_bancaria WHERE NUMERO_CONTA = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -289,12 +289,15 @@ public class ContaBancaria {
     
     // pagamento de conta
     
-void efetuarPagamento(int numeroDigitado) {
+ public void efetuarPagamento(int numeroDigitado) {
+	 
     try (Scanner inputValorPagamento = new Scanner(System.in)) {
-		System.out.println("Digite o valor do pagamento: ");
-		double valorPagamento = inputValorPagamento.nextDouble();
-
-		try (Connection connection = ConnectionDB.getConexaoSQLServer()) {
+		
+    	System.out.println("Digite o valor do pagamento: ");
+    	double valorPagamento = inputValorPagamento.nextDouble();
+    	
+		try (Connection connection = ConnectionDB.getConexaoSQLServer()) {				
+	    	
 		    // Obter o ID da conta com base no número da conta
 		    String idContaQuery = "SELECT ID_CONTA FROM conta_bancaria WHERE NUMERO_CONTA = ?";
 		    PreparedStatement idContaStatement = connection.prepareStatement(idContaQuery);

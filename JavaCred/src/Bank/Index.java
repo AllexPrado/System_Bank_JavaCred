@@ -19,7 +19,7 @@ public class Index {
    do 
    {
    System.out.println("----------------$$$$---------------");
-   System.out.println("-------------BANCK-----------");
+   System.out.println("-------------JavaCred-----------");
    System.out.println("1-ABERTURA DE CONTA");
    System.out.println("2-OPERAR CONTA");
    System.out.println("3-LISTAR CONTAS");
